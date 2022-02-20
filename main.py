@@ -22,7 +22,7 @@ win.tk.call('wm', 'iconphoto', win._w, img)
 col=win['background']
 
 
-def addT(e):
+def addT(e=0):
     content=T.get()
     if content !="":
         Newtask=Task(Ouwrapp,content)
