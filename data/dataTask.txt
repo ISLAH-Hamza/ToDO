@@ -1,2 +1,3 @@
 cleaning my room
-python projects
+learning python
+scq

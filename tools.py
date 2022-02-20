@@ -1,15 +1,33 @@
+from textwrap import fill
 from tkinter import *
+from typing import Counter
 #--------------------class and function definition-------------------
 datafile='data/dataTask.txt'  
 class Task:
     def __init__(self,parent,content):
         self.content=content
-        self.f=Frame(parent,bg="#B33030")
+        self.f=Frame(parent,bg="#086E7D")
         self.f.pack(pady=2)
-        self.label=Label(self.f,text=content,width=50,bg="#B33030",fg="white")
-        self.label.pack(side="left")
-        self.butotn=Button(self.f,text="delete",command=self.delett,bg="#B33030",fg="white", borderwidth=0)
-        self.butotn.pack(side="right")
+        
+        self.label=Label(
+            self.f,
+            text=content,
+            width=50,
+            bg="#086E7D",fg="white")
+        
+        self.label.pack(side="left",fill=Y)
+
+        self.butotn=Button(
+            self.f,
+            text="delete",
+            command=self.delett,
+            bg="#086E7D",
+            fg="white",
+            borderwidth=0,
+            activebackground="#086E7D",
+            activeforeground="orange"
+            )
+        self.butotn.pack(side="right",fill=Y)
     def delett(self):
         self.f.pack_forget()
         removefromfile(self.content)
